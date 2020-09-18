@@ -1,6 +1,7 @@
 from deslocamento import ENCcesarV1
 from retiraCaracteres import retiraCaracteres
 from quebraDescolamento import Findkey
+from vigenere import ENCvigenere
 
 def main():
     entrada = int(input("""
@@ -22,13 +23,13 @@ def main():
             input(
                 """
         
-        Insira a chave (utilize apenas números inteiros): """))
+        Insira a chave (utilize apenas números inteiros ou digite 0 para gerar uma chave aleatória): """))
 
         texto = retiraCaracteres(texto)
         texto_cifrado = ENCcesarV1(texto, chave)
         print("Texto cifrado: ", texto_cifrado)
 
-        descobrir_chave = input(
+        prosseguir = input(
             "Pressione qualquer tecla para descobrir a chave utilizada"
         )
 
@@ -37,7 +38,24 @@ def main():
         print("A chave de criptografia é: ", key)
 
     elif entrada == 2:
-        print("vigenere")
+        texto = input("""
+        
+        Cifra de Vigenere selecionada
+
+        Insira o texto a ser criptografado
+
+        """)
+
+        texto = retiraCaracteres(texto)
+        chave = input("""
+            Insira a chave criptográfica(apenas letras) :
+        """)
+        chave = retiraCaracteres(chave)
+
+        texto_cifrado = ENCvigenere(texto, chave)
+
+        print(texto_cifrado)
     else:
         print("insira um comando válido")
+        
 main()
