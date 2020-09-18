@@ -2,7 +2,7 @@ from deslocamento import ENCcesarV1
 from retiraCaracteres import retiraCaracteres
 from quebraDescolamento import Findkey
 from vigenere import ENCvigenere
-
+from chaveAleatoria import geraChave
 def main():
     entrada = int(input("""
 
@@ -19,12 +19,8 @@ def main():
         Cifra de Deslocamento foi selecionada
 
         Insira o texto a ser criptografado: """)
-        chave = int(
-            input(
-                """
-        
-        Insira a chave (utilize apenas números inteiros ou digite 0 para gerar uma chave aleatória): """))
-
+        chave = geraChave()
+        print(chave)
         texto = retiraCaracteres(texto)
         texto_cifrado = ENCcesarV1(texto, chave)
         print("Texto cifrado: ", texto_cifrado)
