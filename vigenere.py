@@ -14,4 +14,3 @@ def ENCvigenere(entrada, chave):
         interador = alfabeto[numero]
         nova_string += interador
     return nova_string
-
