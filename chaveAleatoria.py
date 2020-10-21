@@ -1,3 +1,5 @@
+import random 
+
 def geraChave():
-    key = randrange(26)
+    key = random.randint(0,25)
     return key

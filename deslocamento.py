@@ -1,9 +1,7 @@
-alfabeto = ["a","b","c","d",
-"e","f","g","h","i","j","k",
-"l","m","n","o","p","q","r",
-"s","t","u","v","w","x", "y", "z",]
+alfabeto = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X", "Y", "Z",]
 
-def ENCcesarV1(entrada, chave):  # Qualquer string passada como parametro + uma chave inteira qualquer, retornará uma string apenas com letras de a-z não acentuadas e sem qualquer tipo de caractere
+def ENCcesarV1(entrada, chave):
+    entrada = entrada.upper()  # Qualquer string passada como parametro + uma chave inteira qualquer, retornará uma string apenas com letras de a-z não acentuadas e sem qualquer tipo de caractere
     nova_string = ""
     for c in entrada:
         interador = alfabeto.index(c)

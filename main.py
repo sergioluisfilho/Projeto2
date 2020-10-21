@@ -14,8 +14,31 @@ import random
 import time
 
 baseDeDados = generatePassword(1, 8) #UMA PALAVRA DE ATÉ 8 LETRAS
-print(baseDeDados)
+print('as palavras são: ', baseDeDados)
+time.sleep(2)
 
+# Cifra de Deslocamento
+print("""
+
+Analisando cifra de Deslocamento
+
+""")
+
+time.sleep(3)
+
+keyCesar = geraChave()
+print('A chave é: ', keyCesar)
+
+for x in baseDeDados:
+    deslocamentoCifrado = ENCcesarV1(x, keyCesar)
+    print('Texto cifrado: ', deslocamentoCifrado)
+
+    print('Chave encontrada: ', Findkey(deslocamentoCifrado, x))
+
+time.sleep(5)
+
+
+print('===============================================================================')
 #vigenere ============================================
 print("""
 
@@ -41,7 +64,7 @@ for c in baseDeDados:
             break
 
     time.sleep(5)
-    print('    ')
+    print('=============================================================================')
 
 
 
@@ -54,7 +77,7 @@ ANALISANDO CIFRA DE BIFID
 
 """)
 
-time.sleep(2)
+time.sleep(4)
 
 for c in baseDeDados:
     print('A palavra e: ', c)
@@ -65,7 +88,7 @@ for c in baseDeDados:
     time.sleep(1)
     cifrado = bifid.encrypt(c, alpha)
     print('cifrada com a chave fica: ', cifrado)
-    time.sleep(1)
+    time.sleep(3)
 
    
 
